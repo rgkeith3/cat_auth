@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
+  gem 'byebug'
   gem 'annotate'
   gem 'bcrypt'
   gem 'better_errors'
