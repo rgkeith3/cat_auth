@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
     @user = User.find_by(username: username)
 
     unless @user
-      flash[:errors] << "username and password don't match"
+      raise "username and password don't match"
     else
-      flash[:errors] << "username and password don't match" unless @user.is_password?(password)
+      raise "username and password don't match" unless @user.is_password?(password)
     end
     @user
   end
