@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # NOTE: ?? do we want a user show eventuall ???
       login_user!
       redirect_to cats_url
     else

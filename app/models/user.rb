@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
 
   after_initialize :generate_session_token
 
+  has_many :cats,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Cat
+
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
 
