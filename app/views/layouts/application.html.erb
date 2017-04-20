@@ -10,10 +10,10 @@
 
   <% if current_user %>
     <h3>Hello <%= current_user.username %></h3>
+    <%#= button_to "Logout!", action: logout_session_url %>
   <% else %>
     <%= button_to "Sign Up!", action: new_user_url %>
     <%= button_to "Login!", action: new_session_url %>
-
   <% end %>
 
 <%= yield %>
